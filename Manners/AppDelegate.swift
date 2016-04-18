@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let version = defaults.objectForKey("appVersion") as? String{
+            // Existing installation
+            if version == UIApplication.appVersion(){
+                // Current version
+            }
+        }else{
+            // Brand new installation/reinstall
+            defaults.setObject(UIApplication.appVersion(), forKey: "appVersion")
+            loadDefaultTopics()
+        }
+
         return true
     }
 
@@ -40,7 +53,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func loadDefaultTopics(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(Constants.topics, forKey: "topics")
+        defaults.synchronize()
+    }
 
 
 }
 
+extension UIApplication {
+    
+    class func appVersion() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+    }
+    
+    class func appBuild() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as! String
+    }
+    
+    class func versionBuild() -> String {
+        let version = appVersion(), build = appBuild()
+        
+        return version == build ? "v\(version)" : "v\(version)(\(build))"
+    }
+}
