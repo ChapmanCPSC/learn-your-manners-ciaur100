@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Asx-Wo-vGe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celly" textLabel="4nw-VJ-d4i" detailTextLabel="Ice-Jq-WYt" style="IBUITableViewCellStyleValue1" id="8Jb-ei-dY4">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
@@ -27,7 +27,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ice-Jq-WYt">
@@ -49,11 +49,79 @@
                             <outlet property="delegate" destination="dsb-Qc-f93" id="KVg-IR-PgJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Manners" id="5oY-au-a2a"/>
+                    <navigationItem key="navigationItem" title="Manners" id="5oY-au-a2a">
+                        <barButtonItem key="rightBarButtonItem" image="cog" id="G9y-z2-1iN">
+                            <connections>
+                                <segue destination="ZSv-Ng-l4R" kind="presentation" id="nHm-bd-CUM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AW1-3o-dHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="998" y="642"/>
+        </scene>
+        <!--Email Table View Controller-->
+        <scene sceneID="Nbl-nX-L9j">
+            <objects>
+                <tableViewController id="EDs-NB-i5j" customClass="EmailTableViewController" customModule="Manners" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="wQN-nk-NWw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Email Summary Address" id="fwz-ar-tcm">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F49-qg-lnL">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F49-qg-lnL" id="uwz-UZ-kja">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u2-KO-IK8">
+                                                    <rect key="frame" x="8" y="11" width="113" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="address@domain.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vBo-D6-jEs">
+                                                    <rect key="frame" x="292" y="13" width="300" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8u2-KO-IK8" firstAttribute="leading" secondItem="uwz-UZ-kja" secondAttribute="leadingMargin" id="TyG-WZ-3pl"/>
+                                                <constraint firstItem="vBo-D6-jEs" firstAttribute="width" secondItem="uwz-UZ-kja" secondAttribute="width" multiplier="0.5" id="XD9-4C-hXD"/>
+                                                <constraint firstItem="vBo-D6-jEs" firstAttribute="trailing" secondItem="uwz-UZ-kja" secondAttribute="trailingMargin" id="ckq-3M-hCl"/>
+                                                <constraint firstItem="8u2-KO-IK8" firstAttribute="centerY" secondItem="uwz-UZ-kja" secondAttribute="centerY" id="dsH-Zw-h3m"/>
+                                                <constraint firstItem="vBo-D6-jEs" firstAttribute="centerY" secondItem="uwz-UZ-kja" secondAttribute="centerY" id="jLb-4E-NfL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="EDs-NB-i5j" id="5bq-we-PPc"/>
+                            <outlet property="delegate" destination="EDs-NB-i5j" id="sJD-5r-SgU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="wII-LK-Wgq">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="hCX-vz-v1Y">
+                            <connections>
+                                <action selector="doneTapped:" destination="EDs-NB-i5j" id="ucy-3v-AMW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="vBo-D6-jEs" id="Nat-MN-a4A"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bjf-x1-yWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="-96"/>
         </scene>
         <!--Topic View Controller-->
         <scene sceneID="Uwh-cq-AiC">
@@ -117,5 +185,26 @@
             </objects>
             <point key="canvasLocation" x="325" y="642"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RxU-No-tsO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZSv-Ng-l4R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dMI-kv-5ZP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EDs-NB-i5j" kind="relationship" relationship="rootViewController" id="pls-d4-fqy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PzT-D3-tcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="-102"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="cog" width="48" height="48"/>
+    </resources>
 </document>

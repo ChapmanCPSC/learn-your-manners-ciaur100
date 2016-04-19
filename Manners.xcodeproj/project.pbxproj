@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CA8A2541CC5D76F005778F6 /* EmailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8A2531CC5D76F005778F6 /* EmailTableViewController.swift */; };
 		9CEDF32F1CC577D500991843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDF32E1CC577D500991843 /* AppDelegate.swift */; };
 		9CEDF3341CC577D500991843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEDF3321CC577D500991843 /* Main.storyboard */; };
 		9CEDF3361CC577D500991843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEDF3351CC577D500991843 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9CA8A2531CC5D76F005778F6 /* EmailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailTableViewController.swift; path = ../EmailTableViewController.swift; sourceTree = "<group>"; };
 		9CEDF32B1CC577D500991843 /* Manners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEDF32E1CC577D500991843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CEDF3331CC577D500991843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				9CEDF3401CC577EC00991843 /* Supporting Files */,
 				9CEDF3321CC577D500991843 /* Main.storyboard */,
+				9CA8A2531CC5D76F005778F6 /* EmailTableViewController.swift */,
 				9CEDF3471CC580DE00991843 /* TopicViewController.swift */,
 				9CEDF3451CC57BB100991843 /* TableViewController.swift */,
 				9CEDF3411CC5780000991843 /* Constants.swift */,
@@ -156,6 +159,7 @@
 				9CEDF32F1CC577D500991843 /* AppDelegate.swift in Sources */,
 				9CEDF3421CC5780000991843 /* Constants.swift in Sources */,
 				9CEDF3481CC580DE00991843 /* TopicViewController.swift in Sources */,
+				9CA8A2541CC5D76F005778F6 /* EmailTableViewController.swift in Sources */,
 				9CEDF3461CC57BB100991843 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +312,7 @@
 				9CEDF33F1CC577D500991843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
