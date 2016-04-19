@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }else{
             // Brand new installation/reinstall
-            defaults.setObject(UIApplication.appVersion(), forKey: "appVersion")
             loadDefaultTopics()
+            defaults.setObject(UIApplication.appVersion(), forKey: "appVersion")
         }
 
         return true
@@ -56,7 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func loadDefaultTopics(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(Constants.topics, forKey: "topics")
+        var topics: [Topic] = [Topic]()
+        for topic in Constants.topics{
+            topics.append(Topic(title: topic["title"] as! String, article: topic["article"] as! String, image: topic["image"] as! String))
+        }
+        let data = NSKeyedArchiver.archivedDataWithRootObject(topics)
+        defaults.setObject(data, forKey: "topicObjects")
         defaults.synchronize()
     }
 

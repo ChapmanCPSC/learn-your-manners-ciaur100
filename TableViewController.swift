@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    lazy var topics: [[String:AnyObject]] = self.loadTopicsFromDefaults()
+    lazy var topics: [Topic] = self.loadTopicObjectsFromDisk()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +26,16 @@ class TableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loadTopicsFromDefaults() -> [[String:AnyObject]]{
+    func loadTopicObjectsFromDisk() -> [Topic]{
         let defaults = NSUserDefaults.standardUserDefaults()
-        return defaults.objectForKey("topics") as! [[String:AnyObject]]
+        let data = defaults.objectForKey("topicObjects") as! NSData
+        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Topic]
     }
     
     func saveToDefaults(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(topics, forKey: "topics")
+        let data = NSKeyedArchiver.archivedDataWithRootObject(topics)
+        defaults.setObject(data, forKey: "topicObjects")
         defaults.synchronize()
     }
 
@@ -52,8 +54,8 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("celly", forIndexPath: indexPath)
         
-        cell.textLabel?.text = topics[indexPath.row]["title"] as? String
-        cell.detailTextLabel?.text = topics[indexPath.row]["viewed"] as? Bool == true ? "✅" : ""
+        cell.textLabel?.text = topics[indexPath.row].title
+        cell.detailTextLabel?.text = topics[indexPath.row].viewed ? "✅" : ""
         
 
         // Configure the cell...
@@ -62,13 +64,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // Brain defaulted to "Toggle" ... -_-"
-//        if let viewed = topics[indexPath.row]["viewed"] as? Bool{
-//            topics[indexPath.row]["viewed"] = !viewed
-//        }else{
-//            topics[indexPath.row]["viewed"] = true
-//        }
-        topics[indexPath.row]["viewed"] = true
+        topics[indexPath.row].viewed = true
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         saveToDefaults()
     }
@@ -77,9 +73,9 @@ class TableViewController: UITableViewController {
         if segue.identifier == "topicDetail"{
             let dvc = segue.destinationViewController as! TopicViewController
             let topic = topics[tableView.indexPathForSelectedRow!.row]
-            dvc.text = topic["article"] as? String
-            dvc.imageName = topic["image"] as? String
-            dvc.title = topic["title"] as? String
+            dvc.topic = topic
+            dvc.title = topic.title
+            
         }
     }
 

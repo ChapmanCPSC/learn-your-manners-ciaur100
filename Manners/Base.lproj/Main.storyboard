@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Manners-->
         <scene sceneID="Vzy-Xn-c3H">
             <objects>
                 <tableViewController id="dsb-Qc-f93" customClass="TableViewController" customModule="Manners" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,11 +49,11 @@
                             <outlet property="delegate" destination="dsb-Qc-f93" id="KVg-IR-PgJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5oY-au-a2a"/>
+                    <navigationItem key="navigationItem" title="Manners" id="5oY-au-a2a"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AW1-3o-dHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="642"/>
+            <point key="canvasLocation" x="998" y="642"/>
         </scene>
         <!--Topic View Controller-->
         <scene sceneID="Uwh-cq-AiC">
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOM-TU-VWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="642"/>
+            <point key="canvasLocation" x="1670" y="642"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EaJ-BT-paT">

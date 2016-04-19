@@ -9,9 +9,8 @@
 import UIKit
 
 class TopicViewController: UIViewController {
-    
-    var text: String?
-    var imageName: String?
+
+    var topic: Topic?
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -19,8 +18,8 @@ class TopicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.image = UIImage(named: imageName!)
-        textView.text = text
+        imageView.image = UIImage(named: topic!.imageName)
+        textView.text = topic?.article
 
         // Do any additional setup after loading the view.
     }
